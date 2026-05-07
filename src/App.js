@@ -8,7 +8,7 @@ import Register from './components/Register';
 import Movies from './components/Movies';
 import TodoApp from './TODOApp/TodoApp';
 import MovieDetails from './components/MovieDetails';
-
+import Favorites from './components/Favorites';
 function App() {
  return (
     <BrowserRouter>
@@ -20,6 +20,7 @@ function App() {
         <Route path="/todo" component={TodoApp} />
         <Redirect exact from="/" to="/movies" /> 
         <Route path="/movie-details/:id" component={MovieDetails} />
+        <Route path="/favorites" component={Favorites} />
       </Switch>
     </BrowserRouter>
   );

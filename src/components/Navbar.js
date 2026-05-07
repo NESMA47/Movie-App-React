@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 function Navbar() {
+    const favorite=useSelector(state => state.fav);
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
             <div className="container">
@@ -14,6 +15,12 @@ function Navbar() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/Movies">Movies</Link>
                         </li>
+                         <li className="nav-item">
+                          <Link className="nav-link" to="/favorites">Favorites  <span className="badge bg-secondary">
+                          <i className="bi bi-heart-fill text-danger"></i>
+                          {favorite.length}</span></Link>
+                        </li>
+                        
 
                       
                     </ul>
