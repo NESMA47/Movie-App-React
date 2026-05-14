@@ -1,9 +1,15 @@
 const INITIAL_STATE = {
-    fav: []
+    fav: [],
+    movies: []
 }
 
  const FavReducer = (state=INITIAL_STATE, action) => {
     switch(action.type) {
+        case "SET_MOVIES":
+            return {
+                ...state,
+                movies: action.payload
+            }
         case "ADD_FAV":
             return {
                 ...state,
